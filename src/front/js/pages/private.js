@@ -10,7 +10,7 @@ export const Private = () => {
     useEffect(() => {
         const asyncFunc = async () => {
             if(store.token !== null) {
-                const resp = await fetch('https://cautious-xylophone-q7q749vrr4vgf9xp-3001.app.github.dev/api/private', {
+                const resp = await fetch(process.env.BACKEND_URL + 'api/private', {
                         method: "GET",
                         headers: {
                             "Authorization": 'Bearer ' + store.token
@@ -37,7 +37,7 @@ export const Private = () => {
             }
         }
         setTimeout(() => {
-            asyncFunc() }, 500)
+            asyncFunc() }, 50)
         },[])
 
     return (

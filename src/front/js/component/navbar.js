@@ -10,7 +10,7 @@ export const Navbar = () => {
 	const signOut = () => {
 		document.cookie = "token=;expires=Thu, 01 Jan 1970 00:00:01 GMT";
 		actions.removeToken()
-		actions.setUserData({})
+		actions.setUserData(null)
 		actions.clearKeys()
 		actions.clearValues()
 		navigate('/')

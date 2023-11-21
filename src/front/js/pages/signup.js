@@ -50,7 +50,7 @@ export const Signup = () => {
         if (number && upper && lower && nonAlphanumeric && password.length >= 8) {
             const json_obj = JSON.stringify(obj)
 
-            const resp = await fetch('https://cautious-xylophone-q7q749vrr4vgf9xp-3001.app.github.dev/api/signup', {
+            const resp = await fetch(process.env.BACKEND_URL + 'api/signup', {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
